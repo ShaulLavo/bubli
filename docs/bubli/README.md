@@ -11,9 +11,9 @@ The goal is to run Fregat's existing React terminal app on bubli, with cohesive 
 | bubli | [ShaulLavo/bubli#1](https://github.com/ShaulLavo/bubli/pull/1) | [Toolkit plan](../../plans/bubli-experience.md) | Core/React integration, themes, controls, focus, rich content, motion, lists and distribution |
 | tree-sitter-md | [ShaulLavo/tree-sitter-md#5](https://github.com/ShaulLavo/tree-sitter-md/pull/5) | [Semantic Markdown](https://github.com/ShaulLavo/tree-sitter-md/blob/docs/bubli-plans-2026-09-28/plans/bubli-semantic-markdown.md) | Semantics, source correspondence, compatibility profiles, streaming and packaged parser artifacts |
 | Singapore | [ShaulLavo/singapore#62](https://github.com/ShaulLavo/singapore/pull/62) | [Editor consumer](https://github.com/ShaulLavo/singapore/blob/docs/bubli-plans-2026-09-28/plans/bubli-markdown-consumer.md) | Existing Markdown authoring/worker consumer, shared semantic results and paired package pins |
-| Fregat | [ShaulLavo/fregat#194](https://github.com/ShaulLavo/fregat/pull/194) | [Plan 201](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/plans/201-bubli-tui.md) | Existing TUI adoption, shared palette/commands/data, host adapters and app validation |
+| Fregat | [ShaulLavo/fregat#194](https://github.com/ShaulLavo/fregat/pull/194) | [Plan 202](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/plans/202-bubli-tui.md) | Existing TUI adoption, shared palette/commands/data, host adapters and app validation |
 
-Fregat's [root PLAN.md](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/PLAN.md#bubli-tui-workstream) records the workstream and cross-project order. Its pre-existing wave-2 queue remains unchanged. The plan index registers 201; Singapore's README links its consumer work package.
+Fregat's [root PLAN.md](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/PLAN.md#bubli-tui-workstream) records the workstream and cross-project order. Its pre-existing wave-2 queue remains unchanged. The plan index registers 202; Singapore's README links its consumer work package.
 
 ## Research retained in this PR
 
