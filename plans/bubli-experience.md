@@ -15,7 +15,7 @@ Owner decisions: use the OpenTUI fork; replace Marked with `tree-sitter-md` on `
 - [83-capability catalog and implementation ownership](../docs/bubli/component-catalog.md).
 - [Parser plan / PR](https://github.com/ShaulLavo/tree-sitter-md/pull/5).
 - [Singapore plan](https://github.com/ShaulLavo/singapore/blob/docs/bubli-plans-2026-09-28/plans/bubli-markdown-consumer.md).
-- [Fregat Plan 201](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/plans/201-bubli-tui.md) and its root roadmap own application integration and cross-project order.
+- [Fregat Plan 202](https://github.com/ShaulLavo/fregat/blob/docs/bubli-plans-2026-09-28/plans/202-bubli-tui.md) and its root roadmap own application integration and cross-project order.
 
 The review-branch links connect the plans before merge. Retain the coordination page as the entry point and normalize document links to main after the series lands.
 
@@ -123,7 +123,7 @@ Exit: long synthetic conversations pass anchor and bounded-work tests with cold/
 ### B6. Fregat adoption and second-consumer proof
 
 - [ ] Publish a coherent package/asset set and verify a fresh install, JSX/runtime/testing exports, one React instance and matching Tree-sitter artifacts in Bun and supported Node.
-- [ ] Pair the exact package revision with Fregat Plan 201. Keep backend/client-core contracts intact.
+- [ ] Pair the exact package revision with Fregat Plan 202. Keep backend/client-core contracts intact.
 - [ ] Exercise the real Agent screen, then a non-chat surface such as settings or file picking using the same primitives. Generic defaults must work beyond the reference chat composition.
 - [ ] Coordinate the shared semantic contract with Singapore without pulling its DOM editor into the TUI or making Fregat adoption wait on unrelated browser redesign.
 
