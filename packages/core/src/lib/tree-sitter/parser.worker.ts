@@ -1,8 +1,9 @@
-import { Parser, Query, Tree, Language } from "web-tree-sitter"
-import type { Edit, QueryCapture, Range } from "web-tree-sitter"
+import { Parser, Query, Tree, Language, Edit as TreeSitterEdit } from "web-tree-sitter"
+import type { QueryCapture, Range } from "web-tree-sitter"
 import { mkdir } from "fs/promises"
 import * as path from "path"
 import type {
+  Edit,
   HighlightRange,
   HighlightResponse,
   SimpleHighlight,
@@ -98,8 +99,8 @@ class ParserWorker {
       let treeWasm =
         treeSitterWasmPath ??
         resolveAssetPath(
-          "web-tree-sitter/tree-sitter.wasm",
-          () => new URL(import.meta.resolve("web-tree-sitter/tree-sitter.wasm")),
+          "web-tree-sitter/web-tree-sitter.wasm",
+          () => new URL(import.meta.resolve("web-tree-sitter/web-tree-sitter.wasm")),
         )
 
       if (isBunfsPath(treeWasm)) {
@@ -558,7 +559,7 @@ class ParserWorker {
     parserState.content = content
 
     for (const edit of edits) {
-      parserState.tree.edit(edit)
+      parserState.tree.edit(new TreeSitterEdit(edit))
     }
 
     const startParse = performance.now()

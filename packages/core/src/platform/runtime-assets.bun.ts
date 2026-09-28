@@ -9,7 +9,7 @@ interface NativePackageModule {
 
 const CORE_ASSET_PREFIX = "@opentui/core/"
 const PARSER_WORKER_ASSET_KEY = `${CORE_ASSET_PREFIX}parser.worker.js`
-const TREE_SITTER_WASM_ASSET_KEY = "web-tree-sitter/tree-sitter.wasm"
+const TREE_SITTER_WASM_ASSET_KEY = "web-tree-sitter/web-tree-sitter.wasm"
 
 const bundledTreeSitterWorkerPath = await resolveBundledFilePath(
   PARSER_WORKER_ASSET_KEY,
@@ -30,7 +30,7 @@ export function resolveDefaultTreeSitterWorkerPath(_fallbackPath: URL): string {
 export function resolveTreeSitterWasm(): Promise<string> {
   return resolveBundledFilePath(
     TREE_SITTER_WASM_ASSET_KEY,
-    () => import("web-tree-sitter/tree-sitter.wasm" as string, { with: { type: "wasm" } }),
+    () => import("web-tree-sitter/web-tree-sitter.wasm" as string, { with: { type: "wasm" } }),
     () => import.meta.resolve(TREE_SITTER_WASM_ASSET_KEY),
     import.meta.url,
   )

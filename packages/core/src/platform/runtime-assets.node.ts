@@ -7,7 +7,7 @@ interface NativePackageModule {
 
 const CORE_ASSET_PREFIX = "@opentui/core/"
 const PARSER_WORKER_ASSET_KEY = `${CORE_ASSET_PREFIX}parser.worker.js`
-const TREE_SITTER_WASM_ASSET_KEY = "web-tree-sitter/tree-sitter.wasm"
+const TREE_SITTER_WASM_ASSET_KEY = "web-tree-sitter/web-tree-sitter.wasm"
 
 export function resolveDefaultParserAsset(relativePath: string, fallbackPath: URL): Promise<string> {
   return Promise.resolve(resolveAssetPath(`${CORE_ASSET_PREFIX}${relativePath}`, fallbackPath))

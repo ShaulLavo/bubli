@@ -1,11 +1,11 @@
 {
   "name": "@opentui/react",
-  "version": "0.5.12",
+  "version": "0.5.12-bubli.1",
   "description": "React renderer for building terminal user interfaces using OpenTUI core",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anomalyco/opentui",
+    "url": "https://github.com/ShaulLavo/bubli",
     "directory": "packages/react"
   },
   "module": "src/index.ts",

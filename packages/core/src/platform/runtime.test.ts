@@ -54,7 +54,7 @@ describe("platform/runtime", () => {
 
   test("reports a configured asset key and resolved missing path without falling back", () => {
     const root = mkdtempSync(join(assetTestTmpdir, "opentui-assets-"))
-    const key = "web-tree-sitter/tree-sitter.wasm"
+    const key = "web-tree-sitter/web-tree-sitter.wasm"
     temporaryDirectories.push(root)
     process.env.OTUI_ASSET_ROOT = root
 
@@ -69,7 +69,7 @@ describe("platform/runtime", () => {
     let fallbackCalled = false
 
     const resolved = await resolveBundledFilePath(
-      "web-tree-sitter/tree-sitter.wasm",
+      "web-tree-sitter/web-tree-sitter.wasm",
       async () => ({ default: bundledUrl }),
       () => {
         fallbackCalled = true
@@ -88,7 +88,7 @@ describe("platform/runtime", () => {
     const fallbackUrl = new URL("./fallback-tree-sitter.wasm", import.meta.url)
 
     const resolved = await resolveBundledFilePath(
-      "web-tree-sitter/tree-sitter.wasm",
+      "web-tree-sitter/web-tree-sitter.wasm",
       async () => ({ default: undefined as unknown as string }),
       fallbackUrl,
       import.meta.url,
@@ -115,7 +115,7 @@ describe("platform/runtime", () => {
     })
 
     const resolved = await resolveBundledFilePath(
-      "web-tree-sitter/tree-sitter.wasm",
+      "web-tree-sitter/web-tree-sitter.wasm",
       loadBundledFile,
       "./missing-bundled-tree-sitter.wasm",
       import.meta.url,
@@ -127,7 +127,7 @@ describe("platform/runtime", () => {
   test("resolves transformed asset loaders when a non-Bun bundle has no source fallback", async () => {
     const bundledUrl = new URL("./bundled-tree-sitter.wasm", import.meta.url).href
     const resolved = await resolveBundledFilePath(
-      "web-tree-sitter/tree-sitter.wasm",
+      "web-tree-sitter/web-tree-sitter.wasm",
       async () => ({ default: bundledUrl }),
       "./missing-transformed-tree-sitter.wasm",
       import.meta.url,

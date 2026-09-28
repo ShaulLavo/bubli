@@ -155,7 +155,7 @@ function assertRuntimeOutputs(): void {
   if (/\b(?:from|import\()\s*["']web-tree-sitter["']/.test(workerSource)) {
     throw new Error("Node parser worker still imports web-tree-sitter at runtime")
   }
-  if (!workerSource.includes('"web-tree-sitter/tree-sitter.wasm"')) {
+  if (!workerSource.includes('"web-tree-sitter/web-tree-sitter.wasm"')) {
     throw new Error("Node parser worker does not reference the stable tree-sitter WASM key")
   }
 

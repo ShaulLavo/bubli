@@ -32,7 +32,7 @@ describe("getNodeAssets", () => {
     expect(keys).toHaveLength(3 + defaultParserAssetPaths.length)
     expect(keys).toContain("@opentui/core/parser.worker.js")
     expect(keys).toContain("@opentui/core/assets/markdown/highlights.scm")
-    expect(keys).toContain("web-tree-sitter/tree-sitter.wasm")
+    expect(keys).toContain("web-tree-sitter/web-tree-sitter.wasm")
 
     for (const asset of first) {
       expect(asset.key.startsWith("/")).toBe(false)

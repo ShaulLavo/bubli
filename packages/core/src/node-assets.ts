@@ -15,7 +15,7 @@ export type NodeAsset = {
 
 const CORE_PREFIX = "@opentui/core/"
 const PARSER_WORKER_KEY = `${CORE_PREFIX}parser.worker.js`
-const TREE_SITTER_WASM_KEY = "web-tree-sitter/tree-sitter.wasm"
+const TREE_SITTER_WASM_KEY = "web-tree-sitter/web-tree-sitter.wasm"
 
 export function getNodeAssets(target: NodeAssetTarget): readonly NodeAsset[] {
   const native = getNativeAssetDescriptor(target)
