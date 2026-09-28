@@ -561,13 +561,6 @@ if (buildLib) {
     },
   }
 
-  const optionalDeps: Record<string, string> = Object.fromEntries(
-    variants.map(({ platform, arch, abi }) => [
-      `${packageJson.name}-${platform}-${arch}${abi ? `-${abi}` : ""}`,
-      packageJson.version,
-    ]),
-  )
-
   writeFileSync(
     join(distDir, "package.json"),
     JSON.stringify(
@@ -589,10 +582,7 @@ if (buildLib) {
         exports,
         dependencies: packageJson.dependencies,
         peerDependencies: packageJson.peerDependencies,
-        optionalDependencies: {
-          ...packageJson.optionalDependencies,
-          ...optionalDeps,
-        },
+        optionalDependencies: packageJson.optionalDependencies,
       },
       null,
       2,

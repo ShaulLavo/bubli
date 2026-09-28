@@ -9,7 +9,7 @@
   "types": "src/index.ts",
   "module": "src/index.ts",
   "main": "src/index.ts",
-  "version": "0.5.12-bubli.1",
+  "version": "0.5.12-bubli.2",
   "type": "module",
   "imports": {
     "#opentui/runtime-assets": {

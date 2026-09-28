@@ -1,4 +1,5 @@
 import { spawnSync, type SpawnSyncReturns } from "node:child_process"
+import { deepStrictEqual } from "node:assert"
 import { existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { dirname, join, relative, resolve } from "node:path"
@@ -10,6 +11,7 @@ import { requireNode26 } from "../../../scripts/node26.mjs"
 interface PackageJson {
   name: string
   version: string
+  optionalDependencies: Record<string, string>
 }
 
 const __filename = fileURLToPath(import.meta.url)
@@ -131,6 +133,8 @@ function assertPortableDeclarations(): void {
 }
 
 function assertRuntimeOutputs(): void {
+  const manifest = JSON.parse(readFileSync(join(distDir, "package.json"), "utf8")) as PackageJson
+  deepStrictEqual(manifest.optionalDependencies, packageJson.optionalDependencies)
   const nodeSource = readRuntimeGraph(["index.node.js", "testing.js", "yoga.js"], "chunk-node-")
   const bunSource = readRuntimeGraph(["index.bun.js", "testing.bun.js", "yoga.bun.js"], "chunk-bun-")
   const workerSource = readFileSync(join(distDir, "parser.worker.js"), "utf8")
